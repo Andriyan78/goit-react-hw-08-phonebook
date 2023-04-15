@@ -1,13 +1,24 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-08-phonebook/static/css/main.0d5b2924.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.d9bed864.js",
+    "main.css": "/goit-react-hw-08-phonebook/static/css/main.1083b3b2.css",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.6f1d531b.js",
+    "static/js/965.57619f5c.chunk.js": "/goit-react-hw-08-phonebook/static/js/965.57619f5c.chunk.js",
+    "static/js/555.7d0de668.chunk.js": "/goit-react-hw-08-phonebook/static/js/555.7d0de668.chunk.js",
+    "static/js/474.ecb3987c.chunk.js": "/goit-react-hw-08-phonebook/static/js/474.ecb3987c.chunk.js",
+    "static/js/106.e1b00846.chunk.js": "/goit-react-hw-08-phonebook/static/js/106.e1b00846.chunk.js",
+    "static/js/419.b0a9ead1.chunk.js": "/goit-react-hw-08-phonebook/static/js/419.b0a9ead1.chunk.js",
+    "static/media/phonebook.jpg": "/goit-react-hw-08-phonebook/static/media/phonebook.867c60963d222049727e.jpg",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
-    "main.0d5b2924.css.map": "/goit-react-hw-08-phonebook/static/css/main.0d5b2924.css.map",
-    "main.d9bed864.js.map": "/goit-react-hw-08-phonebook/static/js/main.d9bed864.js.map"
+    "main.1083b3b2.css.map": "/goit-react-hw-08-phonebook/static/css/main.1083b3b2.css.map",
+    "main.6f1d531b.js.map": "/goit-react-hw-08-phonebook/static/js/main.6f1d531b.js.map",
+    "965.57619f5c.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/965.57619f5c.chunk.js.map",
+    "555.7d0de668.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/555.7d0de668.chunk.js.map",
+    "474.ecb3987c.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/474.ecb3987c.chunk.js.map",
+    "106.e1b00846.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/106.e1b00846.chunk.js.map",
+    "419.b0a9ead1.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/419.b0a9ead1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d5b2924.css",
-    "static/js/main.d9bed864.js"
+    "static/css/main.1083b3b2.css",
+    "static/js/main.6f1d531b.js"
   ]
 }
