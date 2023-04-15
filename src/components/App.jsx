@@ -1,49 +1,53 @@
-import { GlobalStyle } from './GlobalStyle';
 
-import { ContactForm } from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList';
+import { lazy, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Layout } from './Layout/Layout';
+import { useDispatch } from 'react-redux';
+import { refreshUser } from 'redux/auth/operations';
+import { useAuth } from 'hooks';
+import { RestrictedRoute } from 'Routes/RestrictedRoute';
+import { PrivateRoute } from 'Routes/PrivateRoute';
 
-import {
-  Container,
-  Title,
-  SectionStyle,
-  Section,
-  SectionTitle,
-} from './App.styled';
-import { Filter } from './Filter/Filter';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
-import { selectIsLoading } from 'redux/selectors';
-import { RotatingLines } from 'react-loader-spinner';
+const HomePage = lazy(() => import('../pages/Home/Home'));
+const RegisterPage = lazy(() => import('../pages/Register/Register'));
+const LoginPage = lazy(() => import('../pages/Login/Login'));
+const ContactsPage = lazy(() => import('../pages/Contacts/Contacts'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-
-useEffect(() => {
-    dispatch(fetchContacts());
+  const { isRefreeshing } = useAuth();
+  useEffect(() => {
+    dispatch(refreshUser());
   }, [dispatch]);
 
-  return (
-    <Container>
-      <GlobalStyle />
-      <Title>Phonebook</Title>
-      <SectionStyle>
-        <Section>
-          <SectionTitle>Add contacts</SectionTitle>
-          <ContactForm />
-        </Section>
-        <Section>
-          <SectionTitle>Contacts</SectionTitle>
+  return isRefreeshing ? (
+    <div>
+      <h1>Fetching user data...</h1>
+    </div>
+  ) : (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
 
-          <Filter />
-          {isLoading && (
-            <RotatingLines height="45" width="45" strokeColor="grey" />
-          )}
-          <ContactList />
-        </Section>
-      </SectionStyle>
-    </Container>
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute component={RegisterPage} redirectTo="/contacts" />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute component={LoginPage} redirectTo="/contacts" />
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute component={ContactsPage} redirectTo="/login" />
+          }
+        />
+      </Route>
+    </Routes>
   );
 };

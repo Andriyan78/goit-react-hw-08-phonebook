@@ -2,15 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   padding: 33px;
-  background-color: #b2e01e;
-`;
-
-export const Title = styled.h1`
-  margin-top: 0px;
-  margin-bottom: 40px;
-  text-align: center;
-  font-size: 32px;
-  text-transform: uppercase;
+  background-color: #def68e;
 `;
 
 export const Section = styled.section`
@@ -18,8 +10,8 @@ export const Section = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  width: 600px;
-  height: 570px;
+  width: 500px;
+  height: 500px;
   padding: 20px;
   background-color: #cbea65;
   border-radius: 20px;
@@ -36,4 +28,8 @@ export const SectionStyle = styled.div`
 export const SectionTitle = styled.h2`
   margin-top: 0;
   font-size: 24px;
+  text-transform: uppercase;
+  color: #483c3c;
+  padding: 15px;
+  text-shadow: rgb(0, 0, 0, 0.4) 1px 0px 10px;
 `;
